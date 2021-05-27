@@ -1,5 +1,5 @@
 ### A Pluto.jl notebook ###
-# v0.14.5
+# v0.14.7
 
 using Markdown
 using InteractiveUtils
@@ -8,6 +8,7 @@ using InteractiveUtils
 begin
 	using Persa
 	using DatasetsCF
+	using Plots
 end
 
 # ╔═╡ 6f37c1e5-e90a-445f-bf42-a69ce48dafe3
@@ -31,11 +32,22 @@ Primeiramente iremos carregar o dataset MovieLens.
 # ╔═╡ 6df6d23c-46c2-4775-b269-c817b48e2d6d
 dataset = DatasetsCF.MovieLens()
 
-# ╔═╡ fea77b43-5bbf-4c48-99ea-9daac69603b8
-typeof(dataset[1,1])
+# ╔═╡ feb8db18-f6eb-470a-b6fe-ff423a43bad2
+md"""
+Agora será realizado exibido o histograma de notas desse dataset
+"""
+
+# ╔═╡ cc807b5a-34fb-4ea4-99f4-f3b20cd9605e
+begin 
+	ratings = []
+
+	for (u,v,r) in dataset
+		push!(ratings, r + 0)
+	end
+end
 
 # ╔═╡ 55e6cb45-fc5e-4df7-ae53-47dd9419aaf4
-md"""
+histogram(ratings, bins=5, normalize=true, title = "Movielens 100k Ratings", xlabel="Ratings", ylabel="Quantity (%)", legend=false)
 
 # ╔═╡ 6594457c-7ca3-4e28-b80f-3aea147ba2a4
 md"""
@@ -77,10 +89,11 @@ begin
 end
 
 # ╔═╡ Cell order:
-# ╟─4605da8e-bf1c-11eb-1be1-13b99165b934
+# ╠═4605da8e-bf1c-11eb-1be1-13b99165b934
 # ╟─6f37c1e5-e90a-445f-bf42-a69ce48dafe3
 # ╠═6df6d23c-46c2-4775-b269-c817b48e2d6d
-# ╠═fea77b43-5bbf-4c48-99ea-9daac69603b8
+# ╟─feb8db18-f6eb-470a-b6fe-ff423a43bad2
+# ╠═cc807b5a-34fb-4ea4-99f4-f3b20cd9605e
 # ╠═55e6cb45-fc5e-4df7-ae53-47dd9419aaf4
 # ╟─6594457c-7ca3-4e28-b80f-3aea147ba2a4
 # ╠═37a964a6-4658-488d-b6c5-5e1f844be660
