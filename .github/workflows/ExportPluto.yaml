@@ -33,9 +33,9 @@ jobs:
                   Pkg.activate(mktempdir());
                   Pkg.add([
                     Pkg.PackageSpec(name="PlutoSliderServer", version="0.2.1-0.2"),
-                    Persa,
-                    DatasetsCF,
-                    Plots
+                    "Persa",
+                    "DatasetsCF",
+                    "Plots"
                   ]);
 
                   import PlutoSliderServer;
