@@ -6,6 +6,14 @@ using InteractiveUtils
 
 # ╔═╡ f2de0410-47ae-40e8-ab2d-3101295081d9
 begin
+    import Pkg
+    Pkg.activate(mktempdir())
+
+    Pkg.add([
+        Pkg.PackageSpec(name="Persa"),
+        Pkg.PackageSpec(name="DatasetsCF"),
+    ])
+
 	using Persa
 	using DatasetsCF
 end

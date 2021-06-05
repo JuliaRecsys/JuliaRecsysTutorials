@@ -6,6 +6,15 @@ using InteractiveUtils
 
 # ╔═╡ 4605da8e-bf1c-11eb-1be1-13b99165b934
 begin
+    import Pkg
+    Pkg.activate(mktempdir())
+
+    Pkg.add([
+        Pkg.PackageSpec(name="Persa"),
+        Pkg.PackageSpec(name="DatasetsCF"),
+		Pkg.PackageSpec(name="Plots"),
+    ])
+
 	using Persa
 	using DatasetsCF
 	using Plots
